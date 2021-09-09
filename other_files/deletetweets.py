@@ -49,7 +49,7 @@ if __name__== "__main__":
     #fp = open("/home/gustavo/python/delete_old_tweets/tweet.json","r", encoding='UTF-8')
     #myjson = json.loads(fp)  #Block 5
     with open("delete_tweets/tweet.json") as f:
-        myjson = json.load(f.read())
+        myjson = json.loads(f.read())
         #print(myjson[0]['text'])
         
         trash_tweet_ids = [] #Block6

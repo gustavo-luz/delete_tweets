@@ -1,6 +1,5 @@
-{"data:" = [{
+{"data": [ 
   {
-  
     "tweet" : {
       "retweeted" : false,
       "source" : "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
@@ -89011,5 +89010,5 @@
       "full_text" : ")):",
       "lang" : "und"
     }
-  }]
-}
+  }
+]}

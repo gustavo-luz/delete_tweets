@@ -37,5 +37,31 @@ def deleteTweet(tweetId):
       print("Exception: %s\n" % err)
 
 myData = None
-with open('tweet.json') as json_file:
+with open('delete_tweets/tweet.json') as json_file:
     myData = json.load(json_file)
+
+# Range (in UTC offset) within which tweets will be deleted
+# =================================================================
+
+range_start = datetime.strptime('Sep 10 00:00:00 +0000 2010','%b %d %H:%M:%S %z %Y')
+range_end = datetime.strptime('Sep 10 00:00:00 +0000 2017','%b %d %H:%M:%S %z %Y')
+
+# ==================================================================
+# I am creating a list of tweet IDs for consideration, where tweetsToBeDeleted will be
+# used for deleting tweet
+# ==================================================================
+
+tweetsToBeDeleted = []
+tweetsToBeIgnored = []
+
+for element in myData["data"]:
+  tweet_post_time = datetime.strptime(element["tweet"]["created_at"],'%a %b %d %H:%M:%S %z %Y')
+  if (tweet_post_time>= range_start and tweet_post_time<= range_end ):
+    tweetsToBeDeleted.append(element["tweet"]["id_str"])
+  else:
+    tweetsToBeIgnored.append(element["tweet"]["id_str"])
+
+print(len(tweetsToBeDeleted),len(tweetsToBeIgnored))
+
+for id in tweetsToBeDeleted:
+  deleteTweet(id)
