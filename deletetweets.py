@@ -32,7 +32,7 @@ class MaxStream():
         self.stream.filter(track= keyword_list)
 
 
-"""
+
 if __name__== "__main__":
     listener= MaxListener()
     
@@ -48,7 +48,7 @@ if __name__== "__main__":
     #stream.start(['python'])
     #fp = open("/home/gustavo/python/delete_old_tweets/tweet.json","r", encoding='UTF-8')
     #myjson = json.loads(fp)  #Block 5
-    with open("/home/gustavo/python/delete_old_tweets/tweet.json") as f:
+    with open("delete_tweets/tweet.json") as f:
         myjson = json.load(f.read())
         #print(myjson[0]['text'])
         
@@ -67,7 +67,7 @@ if __name__== "__main__":
 
 
 def oauth_login(consumer_key, consumer_secret):
-    """Authenticate with twitter using OAuth"""
+
     
     auth = tweepy.OAuthHandler(keys.API_KEY,keys.API_SECRET_KEY)
     auth_url = auth.get_authorization_url()
@@ -94,4 +94,5 @@ if __name__ == "__main__":
     print ("Authenticated as: %s" , api.me().screen_name)
     
     batch_delete(api)
-        
+
+    """
