@@ -140,3 +140,4 @@ cython_debug/
 #keys
 keys.py
 tweet.json
+twitter-banner-switcher.yaml

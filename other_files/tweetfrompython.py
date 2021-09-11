@@ -17,6 +17,6 @@ twitter = Twython(
     ACCESS_TOKEN_SECRET
 )
 
-message = "Tweeted from python :D"
+message = "Não to crendo, mano.."
 twitter.update_status(status=message)
 print("Tweeted: %s" % message)

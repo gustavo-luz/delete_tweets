@@ -37,6 +37,6 @@ if __name__== "__main__":
 
     stream = MaxStream(auth,listener)
 
-    message = "tweetando com python"
+    message = "Não to crendo, mano.."
     api.update_status(status=message)
     print("Tweeted: %s" % message)
